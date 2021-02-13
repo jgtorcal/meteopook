@@ -9,13 +9,51 @@ use DB;
 
 // -1001291111565 Pay to Cry
 
+// array:2 [
+//     "update_id" => 849054283
+//     "message" => array:6 [
+//       "message_id" => 35
+//       "from" => array:5 [
+//         "id" => 170018514
+//         "is_bot" => false
+//         "first_name" => "Jordi"
+//         "username" => "JordiWP"
+//         "language_code" => "es"
+//       ]
+//       "chat" => array:4 [
+//         "id" => 170018514
+//         "first_name" => "Jordi"
+//         "username" => "JordiWP"
+//         "type" => "private"
+//       ]
+//       "date" => 1613186355
+//       "text" => "/987"
+//       "entities" => array:1 [
+//         0 => array:3 [
+//           "offset" => 0
+//           "length" => 4
+//           "type" => "bot_command"
+//         ]
+//       ]
+//     ]
+//   ]
+
 class TelegramController extends Controller
 {
-    public function webhookUpdates(){
+    public function webhookUpdates(Request $request){
+
+        $data = request()->json()->all();
+
+        $username = $data[0]['message']['from']['username'];
+        $id = $data[0]['message']['from']['id'];
+
+        //dd($id);
+
+
 
         Telegram::sendMessage([
-            'chat_id' => '170018514',
-            'text' => 'Si me llamas, respondo (de momento sin mirar la mierda que me digas)'
+            'chat_id' => $id,
+            'text' => "Que te calles"
         ]);
         return;
 
