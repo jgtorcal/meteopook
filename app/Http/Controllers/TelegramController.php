@@ -15,7 +15,7 @@ class TelegramController extends Controller
 
         Telegram::sendMessage([
             'chat_id' => '170018514',
-            'text' => 'Actu'
+            'text' => 'Si me llamas, respondo (de momento sin mirar la mierda que me digas)'
         ]);
         return;
 
