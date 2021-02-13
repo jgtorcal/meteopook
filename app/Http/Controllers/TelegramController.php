@@ -103,7 +103,7 @@ class TelegramController extends Controller
 
         //dd($activity);
 
-        foreach ($activity['items'] as $item){
+        foreach ($activity as $item['items']){
             Updates::create(array(
                 'update_id'     => $item['update_id'],
                 'message_id'    => $item['message']['message_id'],
