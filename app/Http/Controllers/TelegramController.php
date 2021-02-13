@@ -65,7 +65,7 @@ class TelegramController extends Controller
         //     'chat_id' => $id,
         //     'text' => "Que te calles"
         // ]);
-        // return;
+        return 'ok';
 
     }
 
