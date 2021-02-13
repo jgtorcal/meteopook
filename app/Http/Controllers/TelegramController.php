@@ -103,10 +103,10 @@ class TelegramController extends Controller
 
 
         //$arr should be array as you mentioned as below
-        foreach($activity as $value){
-            echo $value;
-            //echo $value->update_id;
-        }
+        // foreach($activity as $value){
+        //     echo $value;
+        //     //echo $value->update_id;
+        // }
 
    
         // foreach ($activity as $item){
