@@ -48,12 +48,12 @@ class TelegramController extends Controller
 
         Updates::create(array(
             'update_id'     => $updates['update_id'],
-            'message_id'    => $updates['message_id'],
-            'from_id'       => $updates['from_id'],
-            'from_username' => $updates['updfrom_usernameate_id'],
-            'chat_id'       => $updates['chat_id'],
-            'chat_username' => $updates['chat_username'],
-            'text'          => $updates['text']
+            'message_id'    => $updates['message']['message_id'],
+            'from_id'       => $updates['message']['from']['id'],
+            'from_username' => $updates['message']['from']['username'],
+            'chat_id'       => $updates['message']['chat']['id'],
+            'chat_username' => $updates['message']['chat']['username'],
+            'text'          => $updates['message']['text']
         ));
 
         Telegram::sendMessage([
