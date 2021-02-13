@@ -45,6 +45,8 @@ class TelegramController extends Controller
 
         $data = request()->json()->all();
 
+        dd($data);
+
         Updates::create(array(
             'update_id' => $data[0]['update_id'],
             'userdid'  => $data[0]['message']['from']['id'],
