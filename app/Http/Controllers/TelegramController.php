@@ -104,14 +104,15 @@ class TelegramController extends Controller
         //dd($activity);
 
         foreach ($activity as $item['items']){
-            Updates::create(array(
-                'update_id'     => $item['update_id'],
-                'message_id'    => $item['message']['message_id'],
-                'from_id'       => $item['message']['from']['id'],
-                'from_username' => $item['message']['from']['username'],
-                'chat_id'       => $item['message']['chat']['id'],
-                'text'          => $item['message']['text']
-            ));
+            print_r($item);
+            // Updates::create(array(
+            //     'update_id'     => $item['update_id'],
+            //     'message_id'    => $item['message']['message_id'],
+            //     'from_id'       => $item['message']['from']['id'],
+            //     'from_username' => $item['message']['from']['username'],
+            //     'chat_id'       => $item['message']['chat']['id'],
+            //     'text'          => $item['message']['text']
+            // ));
         }
 
         
