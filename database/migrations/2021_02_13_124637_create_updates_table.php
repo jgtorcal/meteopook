@@ -14,10 +14,10 @@ class CreateUpdatesTable extends Migration
             $table->id();
 
             $table->unsignedBigInteger('update_id');
-            $table->string('message_id');
-            $table->string('from_id');
+            $table->unsignedBigInteger('message_id');
+            $table->unsignedBigInteger('from_id');
             $table->string('from_username');
-            $table->string('chat_id');
+            $table->unsignedBigInteger('chat_id');
             $table->string('text')->nullable();
             
             $table->timestamps();
