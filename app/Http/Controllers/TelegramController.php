@@ -44,9 +44,9 @@ class TelegramController extends Controller
 {
     public function webhookUpdates(Request $request){
 
-        $activity = Telegram::getUpdates();
+        $updates = Telegram::getWebhookUpdates();
 
-        foreach ($activity as $item){
+        foreach ($updates as $item){
             Updates::create(array(
                 'update_id' => $item[0]['update_id'],
                 'userdid'  => $item[0]['message']['from']['id'],
