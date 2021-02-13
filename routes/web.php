@@ -20,6 +20,8 @@ Route::get('/', function () {
 
 Route::post('telegramupdates', [App\Http\Controllers\TelegramController::class, 'index'])->name('telegram.index');
 
+Route::post('updates', [App\Http\Controllers\TelegramController::class, 'updates'])->name('telegram.updates');
+
 Route::get('enviarmensaje', [App\Http\Controllers\TelegramController::class, 'enviar'])->name('telegram.enviar');
 
 Route::get('enviartest', [App\Http\Controllers\TelegramController::class, 'enviartest'])->name('telegram.enviartest');

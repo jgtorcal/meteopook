@@ -48,6 +48,17 @@ class TelegramController extends Controller
         return;
 
     }
+
+    public function updates(){
+
+        $activity = Telegram::getUpdates();
+        //$col = collect($activity);
+
+        //dd($activity);
+
+        return $activity;
+
+    }
     
 
 }
