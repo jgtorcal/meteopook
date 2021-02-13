@@ -18,7 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('telegramupdates', [App\Http\Controllers\TelegramController::class, 'index'])->name('telegram.index');
+Route::post('webhookupdates', [App\Http\Controllers\TelegramController::class, 'webhookUpdates'])->name('telegram.webhookupdates');
 
 Route::get('updates', [App\Http\Controllers\TelegramController::class, 'updates'])->name('telegram.updates');
 

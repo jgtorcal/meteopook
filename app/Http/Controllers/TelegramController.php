@@ -11,18 +11,11 @@ use DB;
 
 class TelegramController extends Controller
 {
-    public function index(){
-
-        // $activity = Telegram::getUpdates();
-        // //$col = collect($activity);
-
-        // //dd($activity);
-
-        // return $activity;
+    public function webhookUpdates(){
 
         Telegram::sendMessage([
             'chat_id' => '170018514',
-            'text' => 'Te doy la mano'
+            'text' => 'Actu'
         ]);
         return;
 
