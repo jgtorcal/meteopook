@@ -101,7 +101,7 @@ class TelegramController extends Controller
 
         $activity = Telegram::getUpdates();
 
-        //dd($activity);
+        dd($activity);
 
         foreach ($activity as $item){
             
