@@ -113,7 +113,7 @@ class TelegramController extends Controller
             
             Updates::create(array(
                 'update_id'     => $item->update_id,
-                'message_id'    => $item['message']['message_id'],
+                'message_id'    => $item->message->message_id,
                 'from_id'       => $item['message']['from']['id'],
                 'from_username' => $item['message']['from']['username'],
                 'chat_id'       => $item['message']['chat']['id'],
