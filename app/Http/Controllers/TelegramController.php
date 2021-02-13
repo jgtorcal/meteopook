@@ -101,6 +101,8 @@ class TelegramController extends Controller
 
         $activity = Telegram::getUpdates();
 
+        var_dump($activity);
+
         foreach ($activity as $item){
             Updates::create(array(
                 'update_id'     => $item['items']['update_id'],
@@ -116,7 +118,7 @@ class TelegramController extends Controller
 
         //$col = collect($activity);
 
-        dd($activity);
+        //dd($activity);
 
         return $activity;
 
