@@ -46,11 +46,14 @@ class TelegramController extends Controller
 
         $updates = Telegram::getWebhookUpdates();
 
-
         Updates::create(array(
-            'update_id' => $updates['update_id'],
-            'userdid'  => $updates['message']['chat']['id'],
-            'username' => $updates['message']['from']['username']
+            'update_id'     => $updates['update_id'],
+            'message_id'    => $updates['message_id'],
+            'from_id'       => $updates['from_id'],
+            'from_username' => $updates['updfrom_usernameate_id'],
+            'chat_id'       => $updates['chat_id'],
+            'chat_username' => $updates['chat_username'],
+            'text'          => $updates['text']
         ));
 
         Telegram::sendMessage([
