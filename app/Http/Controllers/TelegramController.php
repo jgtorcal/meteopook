@@ -47,7 +47,7 @@ class TelegramController extends Controller
         $username = $data[0]['message']['from']['username'];
         $id = $data[0]['message']['from']['id'];
 
-        //dd($id);
+        dd($request);
 
 
 
