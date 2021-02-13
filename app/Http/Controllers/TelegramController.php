@@ -57,11 +57,6 @@ class TelegramController extends Controller
         // $username = $data[0]['message']['from']['username'];
         // $id = $data[0]['message']['from']['id'];
 
-        // Updates::create()
-
-        //dd($request);
-
-
 
         // Telegram::sendMessage([
         //     'chat_id' => $id,
@@ -95,6 +90,13 @@ class TelegramController extends Controller
     public function updates(){
 
         $activity = Telegram::getUpdates();
+
+        Updates::create(array(
+            'update_id' => $activity[0]['update_id'],
+            'userdid'  => $activity[0]['message']['from']['id'],
+            'username' => $activity[0]['message']['from']['username']
+        ));
+
         //$col = collect($activity);
 
         //dd($activity);
