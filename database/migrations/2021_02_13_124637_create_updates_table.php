@@ -18,7 +18,7 @@ class CreateUpdatesTable extends Migration
             $table->string('from_id');
             $table->string('from_username');
             $table->string('chat_id');
-            $table->string('text');
+            $table->string('text')->nullable();
             
             $table->timestamps();
         });
