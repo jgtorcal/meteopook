@@ -37,7 +37,7 @@ use DB;
 //         ]
 //       ]
 //     ]
-//   ]
+//   ] 
 
 class TelegramController extends Controller
 {
