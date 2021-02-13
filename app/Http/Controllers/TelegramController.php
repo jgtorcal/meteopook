@@ -101,17 +101,9 @@ class TelegramController extends Controller
 
         $activity = Telegram::getUpdates();
 
-        for ($i = 0; $i < Telegram::UpdateCount(); $i++) {
-            
-            Telegram::serveUpdate($i);
-            $text = Telegram::Text();
-            $chat_id = Telegram::ChatID();
 
-            echo $text;
-            echo $chat_id;
-        }
 
-        //dd($activity);
+        dd($activity);
 
 
         // foreach ($activity as $item){
