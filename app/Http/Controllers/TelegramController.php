@@ -46,11 +46,15 @@ class TelegramController extends Controller
 
         $activity = Telegram::getUpdates();
 
-        Updates::create(array(
-            'update_id' => $activity[0]['update_id'],
-            'userdid'  => $activity[0]['message']['from']['id'],
-            'username' => $activity[0]['message']['from']['username']
-        ));
+        foreach ($activity as $item){
+            Updates::create(array(
+                'update_id' => $item[0]['update_id'],
+                'userdid'  => $item[0]['message']['from']['id'],
+                'username' => $item[0]['message']['from']['username']
+            ));
+        }
+
+        
 
         // $update_id = $data[0]['update_id']
         // $username = $data[0]['message']['from']['username'];
