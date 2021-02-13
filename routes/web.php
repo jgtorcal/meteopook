@@ -18,7 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('telegramupdates', [App\Http\Controllers\TelegramController::class, 'index'])->name('telegram.index');
+Route::post('telegramupdates', [App\Http\Controllers\TelegramController::class, 'index'])->name('telegram.index');
 
 Route::get('enviarmensaje', [App\Http\Controllers\TelegramController::class, 'enviar'])->name('telegram.enviar');
 
