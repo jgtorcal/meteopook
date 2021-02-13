@@ -48,7 +48,7 @@ class TelegramController extends Controller
 
         foreach ($activity as $item){
 
-            $update_id = $item->update_id;
+            $update_id = $item['update_id'];
             $message_id = $item->message->message_id;
             $from_id = $item->message->from->id;
             $from_username = $item->message->from->username;
