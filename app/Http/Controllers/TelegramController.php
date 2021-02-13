@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Telegram\Bot\Laravel\Facades\Telegram;
+use App\Models\Updates;
 
 use DB;
 
@@ -44,18 +45,27 @@ class TelegramController extends Controller
 
         $data = request()->json()->all();
 
-        $username = $data[0]['message']['from']['username'];
-        $id = $data[0]['message']['from']['id'];
+        Updates::create(array(
+            'update_id' => $data[0]['update_id'],
+            'userdid'  => $data[0]['message']['from']['id'],
+            'username' => $data[0]['message']['from']['username']
+        ));
 
-        dd($request);
+        // $update_id = $data[0]['update_id']
+        // $username = $data[0]['message']['from']['username'];
+        // $id = $data[0]['message']['from']['id'];
+
+        // Updates::create()
+
+        //dd($request);
 
 
 
-        Telegram::sendMessage([
-            'chat_id' => $id,
-            'text' => "Que te calles"
-        ]);
-        return;
+        // Telegram::sendMessage([
+        //     'chat_id' => $id,
+        //     'text' => "Que te calles"
+        // ]);
+        // return;
 
     }
 
