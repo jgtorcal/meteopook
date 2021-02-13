@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Updates extends Model
 {
     use HasFactory;
-    protected $fillable = ['update_id', 'userdid', 'username'];
+    protected $fillable = ['update_id', 'message_id', 'from_id', 'from_username', 'chat_id', 'text'];
 }

@@ -44,22 +44,32 @@ class TelegramController extends Controller
 {
     public function webhookUpdates(Request $request){
 
-        $updates = Telegram::getWebhookUpdates();
+        $activity = Telegram::getWebhookUpdates();
 
-        Updates::create(array(
-            'update_id'     => $updates['update_id'],
-            'message_id'    => $updates['message']['message_id'],
-            'from_id'       => $updates['message']['from']['id'],
-            'from_username' => $updates['message']['from']['username'],
-            'chat_id'       => $updates['message']['chat']['id'],
-            'text'          => $updates['message']['text']
-        ));
+        foreach ($activity as $item){
+
+            $update_id = $item->update_id;
+            $message_id = $item->message->message_id;
+            $from_id = $item->message->from->id;
+            $from_username = $item->message->from->username;
+            $chat_id = $item->message->chat->id;
+            $text = $item->message->text;
+            
+            Updates::create(array(
+                'update_id'     => $update_id,
+                'message_id'    => $message_id,
+                'from_id'    => $from_id,
+                'from_username'    => $from_username,
+                'chat_id'    => $chat_id,
+                'text'    => $text,
+            ));
+
+        }
 
         Telegram::sendMessage([
-            'chat_id' => $updates['message']['from']['id'],
+            'chat_id' => $chat_id,
             'text' => 'que te calles'
         ]);
-        return;
 
         
 
@@ -101,29 +111,27 @@ class TelegramController extends Controller
 
         $activity = Telegram::getUpdates();
 
-
-        //$arr should be array as you mentioned as below
-        // foreach($activity as $value){
-        //     echo $value;
-        //     //echo $value->update_id;
-        // }
-
-   
         foreach ($activity as $item){
+
+            $update_id = $item->update_id;
+            $message_id = $item->message->message_id;
+            $from_id = $item->message->from->id;
+            $from_username = $item->message->from->username;
+            $chat_id = $item->message->chat->id;
+            $text = $item->message->text;
             
             Updates::create(array(
-                'update_id'     => $item->update_id,
-                'message_id'    => $item->message->message_id
+                'update_id'     => $update_id,
+                'message_id'    => $message_id,
+                'from_id'    => $from_id,
+                'from_username'    => $from_username,
+                'chat_id'    => $chat_id,
+                'text'    => $text,
             ));
+
         }
 
-        
-
-        //$col = collect($activity);
-
-        //dd($activity);
-
-        return $activity;
+        return "ok";
 
     }
     

@@ -13,12 +13,12 @@ class CreateUpdatesTable extends Migration
         Schema::create('updates', function (Blueprint $table) {
             $table->id();
 
-            $table->unsignedBigInteger('update_id')->nullable();;
-            $table->string('message_id')->nullable();
-            $table->string('from_id')->nullable();;
-            $table->string('from_username')->nullable();;
-            $table->string('chat_id')->nullable();;
-            $table->string('text')->nullable();;
+            $table->unsignedBigInteger('update_id');
+            $table->string('message_id');
+            $table->string('from_id');
+            $table->string('from_username');
+            $table->string('chat_id');
+            $table->string('text');
             
             $table->timestamps();
         });
