@@ -76,29 +76,21 @@ class TelegramController extends Controller
                     'from_username'    => $from_username,
                     'chat_id'    => $chat_id
                 ));
-                
+
             }
             
-            
-
-        
-
-        Telegram::sendMessage([
+        Telegram::sendPhoto([
             'chat_id' => $chat_id,
-            'text' => 'que te calles'
+            'photo' => 'https://picsum.photos/200/300'
+
         ]);
-
         
-
-        // $update_id = $data[0]['update_id']
-        // $username = $data[0]['message']['from']['username'];
-        // $id = $data[0]['message']['from']['id'];
-
 
         // Telegram::sendMessage([
-        //     'chat_id' => $id,
-        //     'text' => "Que te calles"
+        //     'chat_id' => $chat_id,
+        //     'text' => 'que te calles'
         // ]);
+
         return 'ok';
 
     }
