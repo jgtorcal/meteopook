@@ -54,7 +54,7 @@ class TelegramController extends Controller
             $from_username = $activity['message']['from']['username'];
             $chat_id = $activity['message']['chat']['id'];
 
-            if ($activity['message']['text']){
+            if (isset($activity['message']['text'])){
                 $text = $activity['message']['text'];
             }
             
