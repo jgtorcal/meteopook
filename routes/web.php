@@ -19,21 +19,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Route::post('webhookupdates', [App\Http\Controllers\TelegramController::class, 'webhookUpdates'])->name('telegram.webhookupdates');
-
 Route::post('webhookupdates', function(){
     $update = Telegram::commandsHandler(true);
-    return $update;
+    return 'ok webhook';
 });
-
-//[App\Http\Controllers\TelegramController::class, 'webhookUpdates'])->name('telegram.webhookupdates');
-
-
-
-Route::get('updates', [App\Http\Controllers\TelegramController::class, 'updates'])->name('telegram.updates');
-
-Route::get('enviarmensaje', [App\Http\Controllers\TelegramController::class, 'enviar'])->name('telegram.enviar');
 
 Route::get('enviartest', [App\Http\Controllers\TelegramController::class, 'enviartest'])->name('telegram.enviartest');
 
 Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
+
+
+//[App\Http\Controllers\TelegramController::class, 'webhookUpdates'])->name('telegram.webhookupdates');
+//Route::get('updates', [App\Http\Controllers\TelegramController::class, 'updates'])->name('telegram.updates');
+//Route::post('webhookupdates', [App\Http\Controllers\TelegramController::class, 'webhookUpdates'])->name('telegram.webhookupdates');

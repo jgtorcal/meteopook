@@ -58,15 +58,7 @@ class TelegramController extends Controller
 
     }
 
-    public function enviar(){
 
-        Telegram::sendMessage([
-            'chat_id' => '-1001291111565',
-            'text' => 'Te doy la mano'
-        ]);
-        return;
-
-    }
 
 
     public function enviartest(){
@@ -102,12 +94,7 @@ class TelegramController extends Controller
             ));
 
         }
-
-
-
         return "ok";
-
     }
     
-
 }
