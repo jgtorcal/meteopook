@@ -22,7 +22,7 @@ class OjeteCommand extends Command
     /**
      * @var string Command Description
      */
-    //protected $description = 'Help command, Get a list of commands';
+    protected $description = 'Me comes todo el ojete';
 
     /**
      * {@inheritdoc}
