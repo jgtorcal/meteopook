@@ -81,7 +81,7 @@ class TelegramController extends Controller
             
         Telegram::sendPhoto([
             'chat_id' => $chat_id,
-            'photo' => 'https://picsum.photos/200/300'
+            'photo' => 'https://loremflickr.com/cache/resized/65535_50161842181_cd1aff52a2_c_320_240_nofilter.jpg'
 
         ]);
         
