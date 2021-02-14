@@ -37,7 +37,7 @@ class OjeteCommand extends Command
         //     $text .= sprintf('/%s - %s'.PHP_EOL, $name, $handler->getDescription());
         // }
 
-        $text ="que te pires, carapolla";
+        $text ="Correcto, me puedes comer todo el ojete";
         $this->replyWithMessage(compact('text'));
     }
 }
