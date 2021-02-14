@@ -55,17 +55,31 @@ class TelegramController extends Controller
             $chat_id = $activity['message']['chat']['id'];
 
             if (isset($activity['message']['text'])){
+
                 $text = $activity['message']['text'];
+
+                Updates::create(array(
+                    'update_id'     => $update_id,
+                    'message_id'    => $message_id,
+                    'from_id'    => $from_id,
+                    'from_username'    => $from_username,
+                    'chat_id'    => $chat_id,
+                    'text'    => $text,
+                ));
+
+            } else {
+
+                Updates::create(array(
+                    'update_id'     => $update_id,
+                    'message_id'    => $message_id,
+                    'from_id'    => $from_id,
+                    'from_username'    => $from_username,
+                    'chat_id'    => $chat_id
+                ));
+                
             }
             
-            Updates::create(array(
-                'update_id'     => $update_id,
-                'message_id'    => $message_id,
-                'from_id'    => $from_id,
-                'from_username'    => $from_username,
-                'chat_id'    => $chat_id,
-                'text'    => $text,
-            ));
+            
 
         
 
