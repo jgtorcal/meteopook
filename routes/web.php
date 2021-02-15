@@ -26,6 +26,8 @@ Route::post('webhookupdates', function(){
 
 Route::get('enviartest', [App\Http\Controllers\TelegramController::class, 'enviartest'])->name('telegram.enviartest');
 
+Route::get('tiempo', [App\Http\Controllers\TiempoController::class, 'index'])->name('tiempo.index');
+
 Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 
 
