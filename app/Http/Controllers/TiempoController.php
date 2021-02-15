@@ -47,7 +47,7 @@ class TiempoController extends Controller
         $mensaje .= 'Viento: ' . $data->daily[0]->wind_speed . '\\n';
         $mensaje .= 'Humedad: ' . $data->daily[0]->humidity . '\\n';
 
-        $mensaje = '*aaa*aaaaaa\nnew line1 \nnewline2';
+        //$mensaje = '*aaa*aaaaaa\nnew line1 \nnewline2';
 
         return $mensaje;
 
