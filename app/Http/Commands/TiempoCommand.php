@@ -15,7 +15,9 @@ class TiempoCommand extends Command {
         $text = new TiempoController();
 
         
-        json_encode($text = $text->index());
+        $text = $text = $text->index();
+
+        //dd($text);
 
         //$text ="Test";
         //$this->replyWithMessage(compact('text'));

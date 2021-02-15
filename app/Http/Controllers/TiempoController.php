@@ -20,7 +20,7 @@ class TiempoController extends Controller
         $max = 10;
         //$llamada = json_decode(file_get_contents('https://api.openweathermap.org/data/2.5/onecall?lat='.$lat.'&lon='.$long.'&exclude='.$part.'&appid='.$key));
 
-        $llamada = 'https://api.openweathermap.org/data/2.5/onecall?lat='.$lat.'&lon='.$long.'&exclude='.$part.'&appid='.$key;
+        $llamada = 'https://api.openweathermap.org/data/2.5/onecall?lat='.$lat.'&lon='.$long.'&exclude='.$part.'&lang=es&units=metric&appid='.$key;
         
 
         $ch = curl_init();
@@ -32,20 +32,29 @@ class TiempoController extends Controller
         curl_setopt($ch, CURLOPT_VERBOSE, 0);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         $response = curl_exec($ch);
-
         curl_close($ch);
         $data = json_decode($response);
 
-        //dd($data);
 
+        // Formateamos la fecha
         $fecha = $data->daily[0]->dt;
         $fechabien = Carbon::createFromTimestamp($fecha)->format('d-m-Y');
 
-        $mensaje = '<b>El tiempo para mañana ' . $fechabien . ' es: ' . $data->daily[0]->weather[0]->main . '</b>';
-        $mensaje .= 'Temp. máxima: ' . $data->daily[0]->temp->max . '\\n';
-        $mensaje .= 'Temp. mínima: ' . $data->daily[0]->temp->min . '\\n';
-        $mensaje .= 'Viento: ' . $data->daily[0]->wind_speed . '\\n';
-        $mensaje .= 'Humedad: ' . $data->daily[0]->humidity . '\\n';
+        // Formateamos el viento de m/s a K/h
+        $viento = $data->daily[0]->wind_speed;
+        $viento = $viento * 3.6;
+        $viento = round($viento, 2);
+        
+        // Formateamos las temperaturas
+        $tmax = round($data->daily[0]->temp->max, 1);
+        $tmin = round($data->daily[0]->temp->min, 1);
+
+        $mensaje = "<b> \u{25FD}  MAÑANA EN SABADELL (" . $fechabien . ") :</b>\n\n";
+        $mensaje .= "<b>AMBIENTE:</b> " . $data->daily[0]->weather[0]->main . "\n";
+        $mensaje .= "<b>T. MAX</b>  : " . $tmax . " º\n";
+        $mensaje .= "<b>T. MIN</b>  : " . $tmin . " º\n";
+        $mensaje .= "<b>VIENTO</b>  : " . $viento . " K/h \n";
+        $mensaje .= "<b>HUMEDAD</b> : " . $data->daily[0]->humidity . " %\n";
 
         //$mensaje = '*aaa*aaaaaa\nnew line1 \nnewline2';
 
