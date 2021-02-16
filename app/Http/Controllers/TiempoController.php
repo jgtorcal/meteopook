@@ -99,7 +99,8 @@ class TiempoController extends Controller
             $mensaje .= "<b>T. MAX</b>  : " . $tmax . " º\n";
             $mensaje .= "<b>T. MIN</b>  : " . $tmin . " º\n";
             $mensaje .= "<b>VIENTO</b>  : " . $viento . " K/h \n";
-            $mensaje .= "<b>HUMEDAD</b> : " . $data->daily[0]->humidity . " %\n";
+            $mensaje .= "<b>HUMEDAD</b> : " . $data->daily[0]->humidity . " %\n\n\n\n";
+            $mensaje .= "Relativo a: ".$cage_formatted;
 
 
         }
