@@ -21,6 +21,10 @@ class TiempoController extends Controller
             $location = "Gavà";
         }
 
+        $location = str_replace(" ","%20",$location);
+
+        //dd($location);
+
         // Obtenemos las coordenadas
         // https://api.opencagedata.com/geocode/v1/json?q=Sabadell&key=68d073cc87794b62a083a8c6c0561687&language=es&pretty=1
 
