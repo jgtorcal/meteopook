@@ -63,7 +63,7 @@ class TiempoController extends Controller
             $key = env('OPENWEATHER_API_KEY', false);
             $part = 'current,minutely,hourly,alerts';
 
-            $llamada = 'https://api.openweathermap.org/data/2.5/onecall?lat='.$cage_lat.'&lon='.$cage_long.'&exclude='.$part.'&lang=es&units=metric&appid='.$key;
+            $llamada = 'https://api.openweathermap.org/data/2.5/onecall?lat='.$cage_lat.'&lon='.$cage_long.'&exclude='.$part.'&lang=ca&units=metric&appid='.$key;
 
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_HEADER, 0);
@@ -91,6 +91,8 @@ class TiempoController extends Controller
             // Formateamos las temperaturas
             $tmax = round($data->daily[0]->temp->max, 1);
             $tmin = round($data->daily[0]->temp->min, 1);
+
+            // Formateamos el ambiente
 
             
 
