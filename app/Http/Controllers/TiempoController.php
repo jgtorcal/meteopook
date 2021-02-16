@@ -95,7 +95,7 @@ class TiempoController extends Controller
             // Formateamos el ambiente
             switch ($data->daily[0]->weather[0]->main) {
                 case 'Thunderstorm':
-                    $tiempo_mod = "\u{26A1} Tormenta"; ok
+                    $tiempo_mod = "\u{26A1} Tormenta";
                     break;
                 case 'Drizzle':
                     $tiempo_mod = "\u{2614} Llovizna";
@@ -104,13 +104,13 @@ class TiempoController extends Controller
                     $tiempo_mod = "\u{2614} Lluvia";
                     break;
                 case 'Snow':
-                    $tiempo_mod = "\u{2744} Nieve"; ok
+                    $tiempo_mod = "\u{2744} Nieve";
                     break;
                 case 'Clear':
-                    $tiempo_mod = "\u{2600} Despejado"; ok
+                    $tiempo_mod = "\u{2600} Despejado";
                     break;
                 case 'Clouds':
-                    $tiempo_mod = "\u{2601} Nublado"; ok
+                    $tiempo_mod = "\u{2601} Nublado";
                     break;
                 case 'Squall':
                     $tiempo_mod = "\u{2614} Chubascos";
