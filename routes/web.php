@@ -21,7 +21,7 @@ Route::get('/', function () {
 
 Route::post('webhookupdates', function(){
     $update = Telegram::commandsHandler(true);
-    return 'ok webhook';
+    return $update;
 });
 
 Route::get('enviartest', [App\Http\Controllers\TelegramController::class, 'enviartest'])->name('telegram.enviartest');
