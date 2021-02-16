@@ -93,11 +93,35 @@ class TiempoController extends Controller
             $tmin = round($data->daily[0]->temp->min, 1);
 
             // Formateamos el ambiente
+            $tiempo_main = '';
+            switch ($data->daily[0]->weather[0]->main) {
+                case 'Thunderstorm' || 'thunderstorm':
+                    $tiempo_main = 'Tormenta';
+                    break;
+                case 'Drizzle' || 'drizzle':
+                    $tiempo_main = 'Llovizna';
+                    break;
+                case 'Rain' || 'rain':
+                    $tiempo_main = 'Lluvia';
+                    break;
+                case 'Snow' || 'snow':
+                    $tiempo_main = 'Nieve';
+                    break;
+                case 'Clear' || 'clear':
+                    $tiempo_main = 'Despejado';
+                    break;
+                case 'Clouds' || 'clouds':
+                    $tiempo_main = 'Nublado';
+                    break;
+                case 'Squall' || 'squall':
+                    $tiempo_main = 'Chubascos';
+                    break;
+            }
 
             
 
             $mensaje = "<b> \u{25FD}  Mañana en ".strtoupper($location_raw)." (" . $fechabien . ") :</b>\n\n";
-            $mensaje .= "<b>AMBIENTE:</b> " . $data->daily[0]->weather[0]->main . "\n";
+            $mensaje .= "<b>AMBIENTE:</b> " . $tiempo_main . "\n";
             $mensaje .= "<b>T. MAX</b>  : " . $tmax . " º\n";
             $mensaje .= "<b>T. MIN</b>  : " . $tmin . " º\n";
             $mensaje .= "<b>VIENTO</b>  : " . $viento . " K/h \n";
