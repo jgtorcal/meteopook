@@ -17,16 +17,20 @@ class TiempoCommand extends Command {
 
         $update = Telegram::getWebhookUpdates();
 
-        $chatId = $update["message"]["chat"]["id"];
-        $message = $update["message"]["text"];
+        if (isset($update['message'])){
+
+            $chatId = $update["message"]["chat"]["id"];
+            $message = $update["message"]["text"];
+
+        } elseif(isset($update['edited_message'])){
+
+            $chatId = $update["edited_message"]["chat"]["id"];
+            $message = $update["edited_message"]["text"];
+        }
 
         if (strpos($message, "/tiempo") === 0) {
             $location = substr($message, 8);
         }
-
-        //dd($location);
-
-
 
         $text = new TiempoController($location);
 
