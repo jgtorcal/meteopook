@@ -126,7 +126,7 @@ class TiempoController extends Controller
 
             
 
-            $mensaje = "<b> \u{25FD}  Mañana en ".strtoupper($location_raw)." (" . $fechabien . ") :</b>\n\n";
+            $mensaje = "<b>Mañana en ".strtoupper($location_raw)." (" . $fechabien . ") :</b>\n\n";
             $mensaje .= "<b>".strtoupper($tiempo_main) . "</b>\n\n";
             $mensaje .= "<b>\u{2B06} T. MAX</b>  : " . $tmax . " º\n";
             $mensaje .= "<b>\u{2B07} T. MIN</b>  : " . $tmin . " º\n";
