@@ -93,29 +93,35 @@ class TiempoController extends Controller
             $tmin = round($data->daily[0]->temp->min, 1);
 
             // Formateamos el ambiente
-            $tiempo_main = '';
             switch ($data->daily[0]->weather[0]->main) {
-                case 'thunderstorm':
-                    $tiempo_main = 'Tormenta';
+                case 'Thunderstorm':
+                    $tiempo_mod = 'Tormenta';
                     break;
-                case 'drizzle':
-                    $tiempo_main = 'Llovizna';
+                case 'Drizzle':
+                    $tiempo_mod = 'Llovizna';
                     break;
-                case 'rain':
-                    $tiempo_main = 'Lluvia';
+                case 'Rain':
+                    $tiempo_mod = 'Lluvia';
                     break;
-                case 'snow':
-                    $tiempo_main = 'Nieve';
+                case 'Snow':
+                    $tiempo_mod = 'Nieve';
                     break;
-                case 'clear':
-                    $tiempo_main = 'Despejado';
+                case 'Clear':
+                    $tiempo_mod = 'Despejado';
                     break;
-                case 'clouds':
-                    $tiempo_main = 'Nublado';
+                case 'Clouds':
+                    $tiempo_mod = 'Nublado';
                     break;
-                case 'squall':
-                    $tiempo_main = 'Chubascos';
+                case 'Squall':
+                    $tiempo_mod = 'Chubascos';
                     break;
+            }
+
+            if (!isset($tiempo_mod)){
+                $tiempo_main = $data->daily[0]->weather[0]->main;
+            } else {
+                $tiempo_main = $tiempo_mod;
+
             }
 
             
