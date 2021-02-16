@@ -95,25 +95,25 @@ class TiempoController extends Controller
             // Formateamos el ambiente
             $tiempo_main = '';
             switch ($data->daily[0]->weather[0]->main) {
-                case 'Thunderstorm' || 'thunderstorm':
+                case 'thunderstorm':
                     $tiempo_main = 'Tormenta';
                     break;
-                case 'Drizzle' || 'drizzle':
+                case 'drizzle':
                     $tiempo_main = 'Llovizna';
                     break;
-                case 'Rain' || 'rain':
+                case 'rain':
                     $tiempo_main = 'Lluvia';
                     break;
-                case 'Snow' || 'snow':
+                case 'snow':
                     $tiempo_main = 'Nieve';
                     break;
-                case 'Clear' || 'clear':
+                case 'clear':
                     $tiempo_main = 'Despejado';
                     break;
-                case 'Clouds' || 'clouds':
+                case 'clouds':
                     $tiempo_main = 'Nublado';
                     break;
-                case 'Squall' || 'squall':
+                case 'squall':
                     $tiempo_main = 'Chubascos';
                     break;
             }
