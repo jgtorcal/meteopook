@@ -95,30 +95,30 @@ class TiempoController extends Controller
             // Formateamos el ambiente
             switch ($data->daily[0]->weather[0]->main) {
                 case 'Thunderstorm':
-                    $tiempo_mod = 'Tormenta';
+                    $tiempo_mod = "\u{26A1} Tormenta"; ok
                     break;
                 case 'Drizzle':
-                    $tiempo_mod = 'Llovizna';
+                    $tiempo_mod = "\u{2614} Llovizna";
                     break;
                 case 'Rain':
-                    $tiempo_mod = 'Lluvia';
+                    $tiempo_mod = "\u{2614} Lluvia";
                     break;
                 case 'Snow':
-                    $tiempo_mod = 'Nieve';
+                    $tiempo_mod = "\u{2744} Nieve"; ok
                     break;
                 case 'Clear':
-                    $tiempo_mod = 'Despejado';
+                    $tiempo_mod = "\u{2600} Despejado"; ok
                     break;
                 case 'Clouds':
-                    $tiempo_mod = 'Nublado';
+                    $tiempo_mod = "\u{2601} Nublado"; ok
                     break;
                 case 'Squall':
-                    $tiempo_mod = 'Chubascos';
+                    $tiempo_mod = "\u{2614} Chubascos";
                     break;
             }
 
             if (!isset($tiempo_mod)){
-                $tiempo_main = $data->daily[0]->weather[0]->main;
+                $tiempo_main = "\u{26A0} " . $data->daily[0]->weather[0]->main;
             } else {
                 $tiempo_main = $tiempo_mod;
 
@@ -127,12 +127,12 @@ class TiempoController extends Controller
             
 
             $mensaje = "<b> \u{25FD}  Mañana en ".strtoupper($location_raw)." (" . $fechabien . ") :</b>\n\n";
-            $mensaje .= "<b>AMBIENTE:</b> " . $tiempo_main . "\n";
-            $mensaje .= "<b>T. MAX</b>  : " . $tmax . " º\n";
-            $mensaje .= "<b>T. MIN</b>  : " . $tmin . " º\n";
-            $mensaje .= "<b>VIENTO</b>  : " . $viento . " K/h \n";
-            $mensaje .= "<b>HUMEDAD</b> : " . $data->daily[0]->humidity . " %\n\n";
-            $mensaje .= "<i>Relativo a ".$cage_formatted."</i>";
+            $mensaje .= $tiempo_main . "\n";
+            $mensaje .= "<b>\u{2B06} T. MAX</b>  : " . $tmax . " º\n";
+            $mensaje .= "<b>\u{2B07} T. MIN</b>  : " . $tmin . " º\n";
+            $mensaje .= "<b>\u{1F4A8} VIENTO</b>  : " . $viento . " K/h \n";
+            $mensaje .= "<b>\u{1F4A7} HUMEDAD</b> : " . $data->daily[0]->humidity . " %\n\n";
+            $mensaje .= "<i>\u{1F30F} Relativo a ".$cage_formatted."</i>";
 
 
         }
