@@ -21,6 +21,8 @@ class TiempoController extends Controller
             $location = "Gavà";
         }
 
+        $location_raw = $location;
+
         $location = str_replace(" ","%20",$location);
 
         //dd($location);
@@ -90,7 +92,9 @@ class TiempoController extends Controller
             $tmax = round($data->daily[0]->temp->max, 1);
             $tmin = round($data->daily[0]->temp->min, 1);
 
-            $mensaje = "<b> \u{25FD}  Mañana en ".$location." (" . $fechabien . ") :</b>\n\n";
+            
+
+            $mensaje = "<b> \u{25FD}  Mañana en ".$location_raw." (" . $fechabien . ") :</b>\n\n";
             $mensaje .= "<b>AMBIENTE:</b> " . $data->daily[0]->weather[0]->main . "\n";
             $mensaje .= "<b>T. MAX</b>  : " . $tmax . " º\n";
             $mensaje .= "<b>T. MIN</b>  : " . $tmin . " º\n";
