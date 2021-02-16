@@ -31,6 +31,8 @@ class TiempoController extends Controller
         $cage_key = env('OPENCAGEDATA_API_KEY', false);
         $cage_llamada = 'https://api.opencagedata.com/geocode/v1/json?q='.$location.'&key='.$cage_key.'&language=es&pretty=1';
 
+        //dd($cage_llamada);
+
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_HEADER, 0);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
