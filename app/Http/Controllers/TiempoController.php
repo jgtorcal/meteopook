@@ -17,7 +17,7 @@ class TiempoController extends Controller
 
         $location = $this->location;
 
-        if($location ==  'Viladecans' || $location ==  'viladecans'){
+        if($location == 'Viladecans' || $location == 'viladecans'){
             $location = "Gavà";
         }
 
