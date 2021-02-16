@@ -94,7 +94,7 @@ class TiempoController extends Controller
 
             
 
-            $mensaje = "<b> \u{25FD}  Mañana en ".$location_raw." (" . $fechabien . ") :</b>\n\n";
+            $mensaje = "<b> \u{25FD}  Mañana en ".strtoupper($location_raw)." (" . $fechabien . ") :</b>\n\n";
             $mensaje .= "<b>AMBIENTE:</b> " . $data->daily[0]->weather[0]->main . "\n";
             $mensaje .= "<b>T. MAX</b>  : " . $tmax . " º\n";
             $mensaje .= "<b>T. MIN</b>  : " . $tmin . " º\n";
