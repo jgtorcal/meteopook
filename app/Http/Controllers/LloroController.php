@@ -69,7 +69,7 @@ class LloroController extends Controller
 
         }
 
-        $mensaje = "El lloro se ha registrado correctamente. Llorica.";
+        $mensaje = "\u{1F4A7} El lloro se ha registrado correctamente. Llorica.";
 
         return $mensaje;
     }
