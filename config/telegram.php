@@ -119,6 +119,7 @@ return [
         Telegram\Bot\Commands\HelpCommand::class,
         App\Http\Commands\OjeteCommand::class,
         App\Http\Commands\TiempoCommand::class,
+        App\Http\Commands\LloroCommand::class,
         
 
     ],
