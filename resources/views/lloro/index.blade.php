@@ -11,16 +11,38 @@
                 <table class=" table table-hover">
                     <thead>
                         <tr>
-                            <th>from_username</th>
-                            <th>text</th>
-                            <th>fecha</th>
+                            <th>Llorica</th>
+                            <th>Lloro</th>
+                            <th>Fecha</th>
                         </tr>
                     </thead>
                     <tbody>
 
                         @foreach($lloros as $lloro)
                             <tr data-entry-id="{{ $lloro->id }}">
-                                <td>{{ $lloro->from_username ?? '' }}</td>
+                                <td>
+
+                                    @switch($lloro->from_username)
+                                        @case('JordiWP')
+                                            John
+                                            @break
+
+                                        @case('Tetsunaider')
+                                            Tetsu
+                                            @break
+
+                                        @case('Sholvat')
+                                            MM
+                                            @break
+                                        @case('Tremalleta')
+                                            B_R_T
+                                            @break
+
+                                        @default
+                                            Indefinido
+                                    @endswitch
+                                
+                                </td>
                                 <td>{{ $lloro->text ?? '' }}</td>
                                 <td>{{ $lloro->updated_at ?? '' }}</td>
                             </tr>
