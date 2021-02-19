@@ -14,7 +14,7 @@
                     <a class="nav-link {{ (request()->is('/')) ? 'active' : '' }}" href="{{ route('youtube.index') }}">Home</a>
                 </li> --}}
                 <li class="nav-item">
-                    <a class="nav-link {{ (request()->is('lloro*')) ? 'active' : '' }}" href="{{ route('lloro.index') }}">lista de lloros</a>
+                    <a class="nav-link {{ (request()->is('lloro*')) ? 'active' : '' }}" href="{{ route('lloro.index') }}">Lista de lloros</a>
                 </li>
 
             </ul>
