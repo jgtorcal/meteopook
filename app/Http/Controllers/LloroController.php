@@ -121,7 +121,7 @@ class LloroController extends Controller
             
         $claves_aleatorias = array_rand($respuestas, 1);
 
-        $mensaje = "\u{1F62D} \n";
+        $mensaje = "\u{1F62D} \n\n";
         $mensaje .= $respuestas[$claves_aleatorias];
         $mensaje .= "<i>Todos los lloros https://telegram.jordiwp.es/lloros</i>";
 
