@@ -90,7 +90,7 @@ class LloroController extends Controller
 
         }
 
-        $mensaje = "Vale,\n\nEl lloro se ha registrado correctamente.\n\nLlorica \u{1F4A6}";
+        $mensaje = "Vale,\n\nEl lloro se ha registrado correctamente. Llorica \u{1F4A6}\n\n<i>Puedes ver los lloros en https://telegram.jordiwp.es/lloros</i>";
 
         return $mensaje;
     }
