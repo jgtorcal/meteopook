@@ -15,7 +15,9 @@
         "irazasyed/telegram-bot-sdk": "dev-develop",
         "laravel/framework": "^8.12",
         "laravel/tinker": "^2.5",
-        "rap2hpoutre/laravel-log-viewer": "^1.7"
+        "league/flysystem-aws-s3-v3": "~1.0",
+        "rap2hpoutre/laravel-log-viewer": "^1.7",
+        "spatie/laravel-backup": "^7.2"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.5",

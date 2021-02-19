@@ -116,7 +116,7 @@ class LloroController extends Controller
             "Pregunta en el chat de Telegram a ver si alguien es tan MARICA como tú. \n",
             "Cúentale tus fatigas al profe. \n",
             "Menudo pastanaga. \n",
-            "Vaya un mierda de hackerman. \n"
+            "Ahora, dilo sin llorar. \n"
         );
             
         $claves_aleatorias = array_rand($respuestas, 1);
