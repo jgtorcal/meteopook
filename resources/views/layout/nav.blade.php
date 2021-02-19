@@ -17,6 +17,10 @@
                     <a class="nav-link {{ (request()->is('lloro*')) ? 'active' : '' }}" href="{{ route('lloro.index') }}">Lista de lloros</a>
                 </li>
 
+                <li class="nav-item">
+                    <a class="nav-link {{ (request()->is('grafico*')) ? 'active' : '' }}" href="{{ route('lloro.grafico') }}">Gráfico</a>
+                </li>
+
             </ul>
         </div>
 

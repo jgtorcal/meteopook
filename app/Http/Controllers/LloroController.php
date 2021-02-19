@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Lloro;
 use Illuminate\Http\Request;
 
+
+
 class LloroController extends Controller
 {
     public function __construct()
@@ -19,6 +21,9 @@ class LloroController extends Controller
         return view('lloro.index', compact('lloros'));
         
     }
+
+
+    
 
     /**
      * Show the form for creating a new resource.
