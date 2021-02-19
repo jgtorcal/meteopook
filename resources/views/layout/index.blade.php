@@ -15,7 +15,7 @@
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet"> --}}
     @yield('styles')
 
-    <title>ApiTube</title>
+    <title>Telegram API</title>
 </head>
 
 <body>

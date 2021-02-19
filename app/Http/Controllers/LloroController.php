@@ -95,7 +95,36 @@ class LloroController extends Controller
 
         }
 
-        $mensaje = "Vale,\n\nEl lloro se ha registrado correctamente. Llorica \u{1F4A6}\n\n<i>Puedes ver los lloros en https://telegram.jordiwp.es/lloros</i>";
+        $respuestas = array(
+            "Llorando como una Charo no vamos a ninguna parte. \n\n", 
+            "Un puto mar de lágrimas es lo que eres, maricón. \n\n", 
+            "Isqui in li nis dijin a nistri suirti. \n\n", 
+            "Busca en Google, coño. \n\n", 
+            "He perdido la cuenta de la cantidad de lágrimas que has tirado a la basura. \n\n",
+            "Vete a dar un paseo, pastel. \n\n",
+            "Cierra al salir, llorica. \n\n",
+            "He guardado tus lloros de gaylord. \n\n",
+            "Más mierda para la base de datos. \n\n",
+            "Lloros guardados, triste que eres un triste. \n\n",
+            "Guardado en la base de datos, que ya es como tu puto cubo de lágrimas. \n\n",
+            "Seguro que te falta un punto y coma \n\n",
+            "En la modalidad Pay2Win no tendrías estos problemas. \n\n",
+            "No vas a llegar a la entrega y lo sabes. \n\n",
+            "Déjalo como está y entrégalo. \n\n",
+            "Cuando todo esto acabe, podrás bañarte en tus lágrimas. \n\n",
+            "Busca en StackOverflow, como hace todo el mundo. \n\n",
+            "Pregunta en el chat de Telegram a ver si alguien es tan MARICA como tú. \n\n",
+            "Cúentale tus fatigas al profe. \n\n",
+            "Menudo pastanaga. \n\n",
+            "Vaya un mierda de hackerman. \n\n"
+        );
+            
+        $claves_aleatorias = array_rand($respuestas, 1);
+
+
+        $mensaje = $respuestas[$claves_aleatorias];
+        $mensaje .= "\n\n";
+        $mensaje .= "<i>Todos los lloros https://telegram.jordiwp.es/lloros</i>";
 
         return $mensaje;
     }
