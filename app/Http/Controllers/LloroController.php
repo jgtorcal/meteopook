@@ -4,20 +4,41 @@ namespace App\Http\Controllers;
 
 use App\Models\Lloro;
 use Illuminate\Http\Request;
-use Telegram\Bot\Laravel\Facades\Telegram;
 
 class LloroController extends Controller
 {
-    public function __construct($update)
+    public function __construct()
     {
-        $this->update = $update;
 
-        //dd($this->update);
     }
 
     public function index()
     {
+
+        $lloros = Lloro::all();
+        return view('lloro.index', compact('lloros'));
         
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store($update)
+    {
+        $this->update = $update;
 
         $update_id = $this->update['update_id'];
         $message_id = $this->update['message']['message_id'];
@@ -75,35 +96,16 @@ class LloroController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
      * Display the specified resource.
      *
      * @param  \App\Models\Lloro  $lloro
      * @return \Illuminate\Http\Response
      */
-    public function show(Lloro $lloro)
+    public function show()
     {
-        //
+
+        
+
     }
 
     /**

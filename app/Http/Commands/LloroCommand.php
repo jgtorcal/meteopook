@@ -32,10 +32,10 @@ class LloroCommand extends Command {
             $location = substr($message, 7);
         }
 
-        $text = new LloroController($update);
+        $text = new LloroController();
 
         //dd($text);
-        $text = $text->index();
+        $text = $text->store($update);
 
         $this->replyWithMessage([            
             'text'       => $text,

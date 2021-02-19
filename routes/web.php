@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TelegramController;
 use Telegram\Bot\Laravel\Facades\Telegram;
+use App\Http\Controllers\LloroController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,7 +27,9 @@ Route::post('webhookupdates', function(){
 
 Route::get('enviartest', [App\Http\Controllers\TelegramController::class, 'enviartest'])->name('telegram.enviartest');
 
-Route::get('tiempo', [App\Http\Controllers\TiempoController::class, 'index'])->name('tiempo.index');
+//Route::get('tiempo', [App\Http\Controllers\TiempoController::class, 'index'])->name('tiempo.index');
+
+Route::get('lloros', [App\Http\Controllers\LloroController::class, 'index'])->name('lloro.index');
 
 Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 
