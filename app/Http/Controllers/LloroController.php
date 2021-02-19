@@ -123,7 +123,7 @@ class LloroController extends Controller
 
 
         $mensaje = $respuestas[$claves_aleatorias];
-        $mensaje .= "\n\n";
+        $mensaje .= "\n";
         $mensaje .= "<i>Todos los lloros https://telegram.jordiwp.es/lloros</i>";
 
         return $mensaje;
