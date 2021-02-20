@@ -46,7 +46,7 @@ class TiempoController extends Controller
         curl_close($ch);
         $cage_data = json_decode($cage_response);
 
-        //dd($cage_data);
+        dd($cage_data);
 
         if ($cage_data->total_results == 0){
 
