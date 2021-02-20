@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use Telegram\Bot\Laravel\Facades\Telegram;
+use Illuminate\Support\Facades\Log;
 
 class TiempoController extends Controller
 {
@@ -78,6 +80,8 @@ class TiempoController extends Controller
 
             //dd($data);
 
+            
+
 
             // Formateamos la fecha
             $fecha = $data->daily[0]->dt;
@@ -137,9 +141,8 @@ class TiempoController extends Controller
 
         }
 
-        
 
-        //$mensaje = '*aaa*aaaaaa\nnew line1 \nnewline2';
+        $mensaje = $cage_data->total_results;
 
         return $mensaje;
 
