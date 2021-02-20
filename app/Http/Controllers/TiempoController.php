@@ -142,7 +142,7 @@ class TiempoController extends Controller
         }
 
 
-        $mensaje = $cage_data->documentation;
+        $mensaje = $location;
 
         return $mensaje;
 
