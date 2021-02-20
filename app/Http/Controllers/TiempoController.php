@@ -142,7 +142,7 @@ class TiempoController extends Controller
         }
 
 
-        $mensaje = $cage_data->total_results;
+        $mensaje = $cage_data->documentation;
 
         return $mensaje;
 
