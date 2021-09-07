@@ -11,7 +11,7 @@ class OjeteCommand extends Command {
 
     public function handle(){
 
-        $text ="Correcto, me puedes comer todo el ojete";
+        $text ="Correcto, me puedes comer todo el ojete 2";
         $this->replyWithMessage(compact('text'));
 
     }
