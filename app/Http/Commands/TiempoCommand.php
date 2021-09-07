@@ -8,6 +8,7 @@ use Telegram\Bot\Commands\CommandBus;
 use Illuminate\Http\Request;
 use Telegram\Bot\Laravel\Facades\Telegram;
 
+
 class TiempoCommand extends Command {
 
     protected $name = 'tiempo';

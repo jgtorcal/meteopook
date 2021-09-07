@@ -2,6 +2,7 @@
 
 namespace App\Http\Commands;
 use Telegram\Bot\Commands\Command;
+use Carbon\Carbon;
 
 class SemanaCommand extends Command {
 
@@ -9,9 +10,13 @@ class SemanaCommand extends Command {
     protected $description = 'Me comes todo el ojete';
 
 
+
     public function handle(){
 
-        $text ="Numero de semana";
+        $current = Carbon::now();
+        $weekNumber = $current->weekNumberInMonth;
+
+        $text ="Numero de semana:" . $weekNumber;
         $this->replyWithMessage(compact('text'));
 
     }
