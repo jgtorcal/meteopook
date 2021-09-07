@@ -14,7 +14,7 @@ class SemanaCommand extends Command {
     public function handle(){
 
         $current = Carbon::now();
-        $weekNumber = $current->weekNumberInYear;
+        $weekNumber = $current->weekOfYear;
 
         $text ="Numero de semana: " . $weekNumber;
         $this->replyWithMessage(compact('text'));
