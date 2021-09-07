@@ -120,6 +120,7 @@ return [
         App\Http\Commands\OjeteCommand::class,
         App\Http\Commands\TiempoCommand::class,
         App\Http\Commands\LloroCommand::class,
+        App\Http\Commands\SemanaCommand::class,
         
 
     ],
