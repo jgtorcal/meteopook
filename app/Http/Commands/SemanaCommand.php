@@ -9,8 +9,6 @@ class SemanaCommand extends Command {
     protected $name = 'semana';
     protected $description = 'Me comes todo el ojete';
 
-
-
     public function handle(){
 
         $current = Carbon::now();
@@ -21,3 +19,4 @@ class SemanaCommand extends Command {
 
     }
 }
+
