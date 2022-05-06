@@ -65,7 +65,7 @@ class TelegramController extends Controller
 
         Telegram::sendMessage([
             'chat_id' => '170018514',
-            'text' => 'Te doy la mano'
+            'text' => 'Hola'
         ]);
         return;
 
@@ -83,7 +83,7 @@ class TelegramController extends Controller
             $from_username = $item->message->from->username;
             $chat_id = $item->message->chat->id;
             $text = $item->message->text;
-            
+
             Updates::create(array(
                 'update_id'     => $update_id,
                 'message_id'    => $message_id,
@@ -96,5 +96,5 @@ class TelegramController extends Controller
         }
         return "ok";
     }
-    
+
 }

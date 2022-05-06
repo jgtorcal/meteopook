@@ -19,11 +19,11 @@ class LloroController extends Controller
 
         $lloros = Lloro::all();
         return view('lloro.index', compact('lloros'));
-        
+
     }
 
 
-    
+
 
     /**
      * Show the form for creating a new resource.
@@ -76,11 +76,11 @@ class LloroController extends Controller
             Lloro::create(array(
                 'update_id'     => $update_id,
                 'message_id'    => $message_id,
-                'from_id'    => $from_id,
-                'from_username'    => $from_username,
-                'chat_id'    => $chatId,
-                'command'    => $comando,
-                'text'      => $text_lloro
+                'from_id'       => $from_id,
+                'from_username' => $from_username,
+                'chat_id'       => $chatId,
+                'command'       => $comando,
+                'text'          => $text_lloro
             ));
 
         } else {
@@ -88,18 +88,18 @@ class LloroController extends Controller
             Lloro::create(array(
                 'update_id'     => $update_id,
                 'message_id'    => $message_id,
-                'from_id'    => $from_id,
-                'from_username'    => $from_username,
-                'chat_id'    => $chatId
+                'from_id'       => $from_id,
+                'from_username' => $from_username,
+                'chat_id'       => $chatId
             ));
 
         }
 
         $respuestas = array(
-            "Llorando como una Charo no vamos a ninguna parte. \n", 
-            "Un puto mar de lágrimas es lo que eres, maricón. \n", 
-            "Isqui in li nis dijin a nistri suirti. \n", 
-            "Busca en Google, coño. \n", 
+            "Llorando como una Charo no vamos a ninguna parte. \n",
+            "Un puto mar de lágrimas es lo que eres, maricón. \n",
+            "Isqui in li IOC nis dijin a nistri suirti. \n",
+            "Busca en Google, coño. \n",
             "He perdido la cuenta de la cantidad de lágrimas que has tirado a la basura. \n",
             "Vete a dar un paseo, pastel. \n",
             "Cierra al salir, llorica. \n",
@@ -108,6 +108,7 @@ class LloroController extends Controller
             "Lloros guardados, triste que eres un triste. \n",
             "Guardado en la base de datos, que ya es como tu puto cubo de lágrimas. \n",
             "Seguro que te falta un punto y coma \n",
+            "¿Pero te has mirado los paréntesis? \n",
             "En la modalidad Pay2Win no tendrías estos problemas. \n",
             "No vas a llegar a la entrega y lo sabes. \n",
             "Déjalo como está y entrégalo. \n",
@@ -116,9 +117,10 @@ class LloroController extends Controller
             "Pregunta en el chat de Telegram a ver si alguien es tan MARICA como tú. \n",
             "Cúentale tus fatigas al profe. \n",
             "Menudo pastanaga. \n",
-            "Ahora, dilo sin llorar. \n"
+            "Ahora, dilo sin llorar. \n",
+            "Este no ha sido mi lloro mas digno. \n"
         );
-            
+
         $claves_aleatorias = array_rand($respuestas, 1);
 
         $mensaje = "\u{1F62D} \n\n";
@@ -137,7 +139,7 @@ class LloroController extends Controller
     public function show()
     {
 
-        
+
 
     }
 

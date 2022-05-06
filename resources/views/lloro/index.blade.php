@@ -27,7 +27,7 @@
                                             John
                                             @break
 
-                                        @case('Tetsunaider')
+                                        @case('Tetsunider')
                                             Tetsu
                                             @break
 
@@ -36,6 +36,10 @@
                                             @break
                                         @case('Tremalleta')
                                             B_R_T
+                                            @break
+                                        
+                                        @case('infraimovic')
+                                            Tetsu
                                             @break
 
                                         @default
