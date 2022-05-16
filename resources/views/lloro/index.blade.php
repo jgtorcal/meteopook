@@ -11,7 +11,7 @@
                 <table class=" table table-hover">
                     <thead>
                         <tr>
-                            <th>Llorica</th>
+                            <th>Llorica!</th>
                             <th>Lloro</th>
                             <th>Fecha</th>
                         </tr>
