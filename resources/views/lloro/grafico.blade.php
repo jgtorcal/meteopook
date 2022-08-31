@@ -7,7 +7,7 @@
 
 <div class="col">
     <div class="card">
-        <div class="card-header">Gráfica de lloros !!!</div>
+        <div class="card-header">Gráfica de lloros !!!4</div>
 
         <div class="card-body">
 
